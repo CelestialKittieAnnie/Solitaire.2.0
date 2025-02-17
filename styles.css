@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(45deg, #ffb6c1, #add8e6, #98fb98, #fffacd);
+    border-image-slice: 1;
+    padding: 10px;
+}
+
+.deck-container, .tableau, .foundation-container {
+    display: flex;
+    gap: 10px;
+}
+
+.deck, .waste, .foundation, .column {
+    width: 80px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    user-select: none;
+    background-color: #ccc;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    user-select: none;
+    position: absolute;
+}
+
+.card.pink {
+    background-color: #ffb6c1;
+}
+
+.card.blue {
+    background-color: #add8e6;
+}
+
+.card.green {
+    background-color: #98fb98;
+}
+
+.card.yellow {
+    background-color: #fffacd;
+}
+
+.column {
+    position: relative;
+}
+
+.column .card {
+    position: absolute;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (hover: none) {
+    .card {
+        touch-action: none;
+    }
+}
